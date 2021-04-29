@@ -11,3 +11,7 @@ optional arguments:
   -o O        保存结果到文本文件 
 ```  
 # Example  
+## 批量检测 
+![image](https://github.com/NHPT/WebReportV9Exp/blob/main/Untitled.png) 
+## 批量利用 
+![image](https://github.com/NHPT/WebReportV9Exp/blob/main/Untitled2.png) 
